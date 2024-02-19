@@ -829,6 +829,15 @@ main {
   line-height: 1.6;
 }
 
+.exp-text {
+  color: var(--light-gray);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  display: list-item;
+  margin-left: 1em;
+  list-style-type: circle;
+}
+
 
 /**
  * skills 
