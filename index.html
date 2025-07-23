@@ -1,653 +1,816 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KHALID SAIFULLAH - PORTFOLIO</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bintang Aditya - Personal Portfolio</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://khalidsaifullah.me/" />
+    <meta property="og:title" content="KHALID SAIFULLAH - PORTFOLIO" />
+    <meta property="og:description" content="Web Developer Portfolio of Khalid Saifullah" />
+    <meta property="og:image" content="./assets/images/logo.svg" />
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="http://khalidsaifullah.me/" />
+    <meta property="twitter:title" content="KHALID SAIFULLAH - PORTFOLIO" />
+    <meta property="twitter:description" content="Web Developer Portfolio of Khalid Saifullah" />
+    <meta property="twitter:image" content="./assets/images/logo.svg" />
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main>
+    <!-- WhatsApp -->
+    <meta property="og:site_name" content="Khalid Saifullah Portfolio" />
+    <meta property="og:title" content="KHALID SAIFULLAH - PORTFOLIO" />
+    <meta property="og:description" content="Web Developer Portfolio of Khalid Saifullah" />
+    <meta property="og:image" content="./assets/images/logo.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!--
+    - cdn
+  -->
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" rel="stylesheet" />
+
+    <!--
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./assets/images/logo.svg" type="image/x-icon" />
+
+    <!--
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!--
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--
+    - #MAIN
+  -->
+    <div
+      class="procus-cursor"
+      style="transform: translate3d(calc(-50% + 1919px), calc(-50% + 787px), 0px)"
+    ></div>
+    <div class="procus-cursor2" style="left: 551px; top: 918px"></div>
+
+    <main>
+      <!--
       - #SIDEBAR
     -->
 
-    <aside class="sidebar" data-sidebar>
+      <aside class="sidebar" style="position: sticky; z-index: 2" data-sidebar>
+        <div class="sidebar-info">
+          <a href="./assets/images/profile-img-1.jpg" data-fancybox="gallery">
+            <div class="user-bg"></div>
+            <figure class="avatar-box">
+              <img src="./assets/images/self3.png" alt="Another Profile" width="80" />
+            </figure>
+          </a>
 
-      <div class="sidebar-info">
+          <div class="info-content">
+            <h1 class="name" title="Khalid">KHALID SAIFULLAH</h1>
+            <p class="title typing-text"></p>
+            <div class="flag-container">
+              <img src="./assets/images/icon/indonesia-flag.svg" alt="Another Profile" width="30" />
+              <p style="color: white">|</p>
+              <img src="./assets/images/logo.svg" alt="Another Profile" width="30" />
+            </div>
+          </div>
 
-        <figure class="avatar-box">
-          <img src="./assets/images/profile-img.jpg" alt="Bintang Aditya" width="80">
-        </figure>
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
 
-        <div class="info-content">
-          <h1 class="name" title="Bintang">Bintang Aditya</h1>
-
-          <p class="title">Mobile Developer</p>
-
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
 
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
 
-      </div>
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
 
-      <div class="sidebar-info_more">
+                <a href="mailto:khalid@khalidsaifullah.me" class="contact-link">khalid@khalidsaifullah.me</a>
+              </div>
+            </li>
 
-        <div class="separator"></div>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
 
-        <ul class="contacts-list">
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
 
-          <li class="contact-item">
+                <a href="tel:+6289634715825" class="contact-link">+62 821-4768-8858</a>
+              </div>
+            </li>
 
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
 
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
 
-              <a href="mailto:bintangaditya676@gmail.com" class="contact-link">bintangaditya676@gmail.com</a>
-            </div>
+                <time datetime="1998-07-15">15 July, 1998</time>
+              </div>
+            </li>
 
-          </li>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
 
-          <li class="contact-item">
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
 
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
+                <address>Bogor, West Java, Indonesia</address>
+              </div>
+            </li>
+          </ul>
 
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
+          <div class="separator"></div>
 
-              <a href="tel:+6289634715825" class="contact-link">+62 896-3471-5825</a>
-            </div>
+          <ul class="social-list">
+            <li class="social-item">
+              <a
+                href="https://www.linkedin.com/in/khalid-saifullah-a90a05217/"
+                class="social-link"
+                target="_blank"
+              >
+                <img src="./assets/images/linkedin-icon.svg" alt="Another Profile" width="25" />
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://www.instagram.com/holit_sky/" class="social-link" target="_blank">
+                <img src="./assets/images/instagram-icon.svg" alt="Another Profile" width="25" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
 
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">29 December, 2001</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Bogor, Jawa Barat, Indonesia</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/bintang-adityaa/" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
+      <!--
       - #main-content
     -->
 
-    <div class="main-content">
-
-      <!--
+      <div class="main-content">
+        <!--
         - #NAVBAR
       -->
 
-      <nav class="navbar">
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>About</button>
+            </li>
 
-        <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
 
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Portfolio</button>
+            </li>
+          </ul>
+        </nav>
 
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
+        <!--
         - #ABOUT
       -->
 
-      <article class="about  active" data-page="about">
+        <article class="about active" data-page="about">
+          <section class="about-text">
+            <video class="body-overlay" muted="" autoplay="" loop="" playsinline>
+              <source src="./assets/images/video/video4.mp4" type="video/mp4" />
+            </video>
+            <header>
+              <h2 class="h2 article-title">About me</h2>
+            </header>
 
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
+            <p>
+              Hello! I am Khalid, a Web Developer with a deep passion for technology and software development. 
+              My journey in tech has led me to specialize
+              in creating dynamic and scalable web applications, with a strong foundation in JavaScript and
+              PHP. I have extensive experience working with frameworks such as Laravel, CodeIgniter, and React,
+              allowing me to develop high-performance, maintainable, and user-centric applications. I am
+              committed to improving my skills and exploring new technologies to create innovative and
+              impactful solutions.
+            </p>
 
-        <section class="about-text">
-          <p>
-            Halo! Perkenalkan, saya Bintang Aditya, seorang lulusan baru Teknik Informatika, dan saya sangat antusias untuk mengejar karir sebagai Mobile Developer. Semasa studi saya, saya selalu memiliki ketertarikan yang kuat pada teknologi, dan itu mendorong saya untuk fokus pada pengembangan keahlian dalam menciptakan aplikasi mobile.
-          <p>
-            Saya adalah seorang individu yang selalu ingin mempelajari hal baru. Selain ketertarikan saya dalam pengembangan aplikasi Mobile, saya juga tertarik pada berbagai bidang teknologi, seperti pengembangan aplikasi Web, Augmented Reality dan Game Development. Saya percaya bahwa dengan terus menggali pengetahuan dalam berbagai aspek teknologi dapat membantu saya menjadi seorang pengembang yang lebih kreatif.
-          </p>
-        </section>
+            <p>
+              I am someone who is always eager to learn new things. In addition to my interest in web
+              application development, I also have a passion for various fields of technology, such as mobile
+              application development and Geographic Information Systems (GIS). Moreover, I have a strong
+              interest in UI/UX design, as I believe that an intuitive and well-crafted interface plays a
+              crucial role in enhancing user experience and ensuring an application's success. I am confident
+              that by continuously expanding my knowledge in different areas of technology, I can become a more
+              creative developer.
+            </p>
+          </section>
 
-
-        <!--
+          <!--
           - service
         -->
 
-        <section class="service">
+          <section class="service">
+            <h3 class="h3 service-title">What i'm doing</h3>
 
-          <h3 class="h3 service-title">What i'm doing</h3>
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40" />
+                </div>
 
-          <ul class="service-list">
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web development (CodeIgniter & Laravel)</h4>
 
-            <li class="service-item">
+                  <p class="service-item-text">
+                    A developer who has built various web applications (both individually and collaboratively)
+                  </p>
+                </div>
+              </li>
 
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-design.svg" alt="mobile app icon" width="40" />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">UI/UX Design (Figma)</h4>
+
+                  <p class="service-item-text">
+                    Experienced in designing UI/UX for web and mobile applications using Figma (both
+                    individually and collaboratively)
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40" />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Mobile software development (React Native)</h4>
+
+                  <p class="service-item-text">Developed mobile applications using React Native</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="service">
+            <h3 class="h3 service-title">Technologies I Work With</h3>
+            <div class="skills-wrapper">
+              <div class="service-skills">
+                <div class="service-skill">
+                  <img src="./assets/images/icon/html-icon.svg" alt="Web development icon" width="40" />
+                  <p>HTML</p>
+                </div>
+                <div class="service-skill">
+                  <img src="./assets/images/icon/css-icon.svg" alt="Web development icon" width="40" />
+                  <p>CSS</p>
+                </div>
+                <div class="service-skill">
+                  <img src="./assets/images/icon/js-icon.svg" alt="Web development icon" width="40" />
+                  <p>Javascript</p>
+                </div>
+                <div class="service-skill">
+                  <img src="./assets/images/icon/bootstrap-icon.svg" alt="Web development icon" width="40" />
+                  <p>Bootstrap</p>
+                </div>
+                <div class="service-skill">
+                  <img src="./assets/images/icon/php-icon.svg" alt="Web development icon" width="40" />
+                  <p>PHP</p>
+                </div>
+                <div class="service-skill">
+                  <img src="./assets/images/icon/ci-icon.svg" alt="Web development icon" width="40" />
+                  <p>CodeIgniter</p>
+                </div>
+                <div class="service-skill">
+                  <img src="./assets/images/icon/laravel-icon.svg" alt="Web development icon" width="40" />
+                  <p>Laravel</p>
+                </div>
+                <div class="service-skill">
+                  <img src="./assets/images/icon/icon-react.svg" alt="Web development icon" width="40" />
+                  <p>React</p>
+                </div>
+                <div class="service-skill">
+                  <img src="./assets/images/icon/mysql-icon.svg" alt="Web development icon" width="40" />
+                  <p>MySQL</p>
+                </div>
+                <div class="service-skill">
+                  <img src="./assets/images/icon/icon-git.svg" alt="Web development icon" width="40" />
+                  <p>GIT</p>
+                </div>
+                <div class="service-skill">
+                  <img src="./assets/images/icon/postman-icon.svg" alt="Web development icon" width="40" />
+                  <p>Postman</p>
+                </div>
+                <div class="service-skill">
+                  <img src="./assets/images/icon/figma-icon.svg" alt="Web development icon" width="40" />
+                  <p>Figma</p>
+                </div>
               </div>
+            </div>
+          </section>
 
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile software development (Android Native dan Flutter)</h4>
-
-                <p class="service-item-text">
-                  Developer yang telah mengembangkan berbagai aplikasi mobile (baik secara individu ataupun kolaboratif)
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
-
-                <p class="service-item-text">
-                  Pernah mengembangkan aplikasi web dengan menggunakan NodeJs dan CodeIgniter
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/game-development.png" alt="game icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Game Development</h4>
-
-                <p class="service-item-text">
-                 Seorang pemula dalam game development, sedang mempelajari godot engine dan unity engine
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
+          <!--
           - testimonials
         -->
 
-       
-        <!--
+          <!--
           - testimonials modal
         -->
 
-        <div class="modal-container" data-modal-container>
+          <div class="modal-container" data-modal-container>
+            <div class="overlay" data-overlay></div>
 
-          <div class="overlay" data-overlay></div>
+            <section class="testimonials-modal">
+              <button class="modal-close-btn" data-modal-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
 
-          <section class="testimonials-modal">
+              <div class="modal-img-wrapper">
+                <figure class="modal-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img />
+                </figure>
 
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
+                <img src="./assets/images/icon-quote.svg" alt="quote icon" />
               </div>
 
-            </div>
+              <div class="modal-content">
+                <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
 
-          </section>
+                <time datetime="2021-06-14">14 June, 2021</time>
 
-        </div>
+                <div data-modal-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were very pleased with the work done.
+                    She has a lot of experience and is very concerned about the needs of client. Lorem ipsum
+                    dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor
+                    incididunt ut laborels dolore magnarels alia. Richard was hired to create a corporate
+                    identity. We were very pleased with the work done. She has a lot of experience and is very
+                    concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                    consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore
+                    magnarels alia. Richard was hired to create a corporate identity. We were very pleased with
+                    the work done. She has a lot of experience and is very concerned about the needs of client.
+                    Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et
+                    eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
 
-
-
-
-      </article>
-
-
-
-
-
-      <!--
+        <!--
         - #RESUME
       -->
 
-      <article class="resume" data-page="resume">
+        <article class="resume" data-page="resume">
+          <video class="body-overlay" muted="" autoplay="" loop="" playsinline>
+            <source src="./assets/images/video/wave.mp4" type="video/mp4" />
+          </video>
+          <header>
+            <h2 class="h2 article-title">Resume</h2>
+          </header>
 
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
 
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <h3 class="h3">Education</h3>
             </div>
 
-            <h3 class="h3">Education</h3>
-          </div>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Universitas Ibn Khaldun Bogor</h4>
 
-          <ol class="timeline-list">
+                <span>2019 — 2024</span>
 
-            <li class="timeline-item">
+                <p class="exp-text">Informatics Engineering / Teknik Informatika</p>
 
-              <h4 class="h4 timeline-item-title">Universitas Ibn Khaldun Bogor</h4>
+                <p class="exp-text">GPA: 3.53, Concentration: Software Engineering</p>
+                <p class="exp-text">
+                  Developed the SIJAB mobile application as a final project, designed to provide real-time
+                  information by displaying CCTV footage to monitor road and transportation conditions in Bogor
+                  City. The application delivers data on traffic density, public facility locations, routes,
+                  and the latest traffic news in Bogor City.
+                </p>
+                <p class="exp-text">
+                  Completed the MBKM program at Bappedalitbang Bogor Regency by designing and developing the
+                  UI/UX for a web application to ensure its interface and functionality align with client needs
+                  and preferences.
+                </p>
+              </li>
+            </ol>
+          </section>
 
-              <span>2019 — 2023</span>
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
 
-              <p class="exp-text">
-                Teknik Informatika
-              </p>
-
-              <p class="exp-text">
-                IPK: 3.67, Konsenterasi: Software Engineering
-          
-              </p>
-              <p class="exp-text">
-                Menyelesaikan program MBKM dengan Bappedalitbang Kabupaten Bogor untuk mengembangkan aplikasi sesuai dengan keinginan client
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">SMK Taruna Terpadu 1 Bogor</h4>
-
-              <span>2016 — 2019</span>
-
-              <p class="timeline-text">
-                Jurusan: Multimedia
-              </p>
-
-            </li>
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <h3 class="h3">Experience</h3>
             </div>
 
-            <h3 class="h3">Experience</h3>
-          </div>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Badan Standardisasi Instrumen Lingkungan Hidup dan Kehutanan (Web Developer)
+                </h4>
 
-          <ol class="timeline-list">
+                <span>Aug - Dec 2024</span>
 
-            <li class="timeline-item">
-              
-              <h4 class="h4 timeline-item-title">Flutter Developer</h4>
+                <p class="exp-text">
+                  Implemented the MVC (Model-View-Controller) architecture in Laravel and CodeIgniter 3 for
+                  structured system development.
+                </p>
+                <p class="exp-text">
+                  Developed interactive mapping features using Leaflet.js for visualization and monitoring of
+                  entity and laboratory distributions across Indonesia.
+                </p>
+                <p class="exp-text">
+                  Performed maintenance and bug fixing for the LiNE BSILHK information system to ensure smooth
+                  system operation, as well as updates and enhancements for specific features required as part
+                  of the advanced development stage of the LiNE BSILHK information system.
+                </p>
+              </li>
 
-              <span>2023 — Present</span>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Alus Technology (UI/UX Designer)</h4>
 
-              <p class="exp-text">
-                Menguasai Dart dan Flutter Framework, MVVM Pattern, State Management BLoC dan Provider
-              </p>
-              <p class="exp-text">
-                Mengembangkan aplikasi mobile, dan pernah migrate aplikasi native android (Kotlin) menjadi aplikasi Flutter
-              </p>
+                <span>Aug - Oct 2024</span>
 
-            </li>
+                <p class="exp-text">
+                  Designed the Dashboard page for the SINADI DKI website and created wireframes, mockups, and
+                  prototypes using Figma to visualize the user interface.
+                </p>
+                <p class="exp-text">
+                  Conducted user research to understand needs and preferences, resulting in intuitive designs.
+                </p>
+                <p class="exp-text">
+                  Gradually improved the design based on feedback and usability testing outcomes.
+                </p>
+              </li>
 
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Android Developer</h4>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Arculus Indonesia (Web Developer)</h4>
 
-              <span>2022 — Present</span>
+                <span>2022 — 2024</span>
 
-              <p class="exp-text">
-                Mengembangkan berbagai aplikasi Android, pernah mendeploy salah satu aplikasinya ke Google Play Store melalui kerja sama dengan Bappedalitbang Kabupaten Bogor dalam program MBKM
-              </p>
-              <p class="exp-text">
-                Menguasai Kotlin dan Java, MVVM Pattern, Data Binding, Dependency Injection, dan Lokal Database (Room)
-              </p>
+                <p class="exp-text">
+                  Developed several web applications using PHP and JavaScript, leveraging the CodeIgniter and
+                  Laravel frameworks.
+                </p>
+                <p class="exp-text">
+                  Implemented a multi-language system using Laravel Localization to support both Indonesian and
+                  English.
+                </p>
+                <p class="exp-text">Built an admin dashboard for website content management.</p>
+              </li>
 
-            </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">K3I Korlantas Polri (Web Developer)</h4>
 
-            <li class="timeline-item">
+                <span>Sep — Nov 2022</span>
 
-              <h4 class="h4 timeline-item-title">Web Developer</h4>
+                <p class="exp-text">
+                  Using the CodeIgniter 3 framework to support development and optimize web application
+                  performance.
+                </p>
+                <p class="exp-text">
+                  Collaborating with the development team to implement CRUD functions in various menu modules.
+                </p>
+                <p class="exp-text">
+                  Actively participating in team meetings and discussions, sharing insights and best practices
+                  to improve web development projects.
+                </p>
+              </li>
+            </ol>
+          </section>
 
-              <span>2020 — 2022</span>
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <img src="./assets/images/badge-icon.svg" alt="Another Profile" width="25" />
+              </div>
 
-              <p class="exp-text">
-                Pernah mengembangkan beberapa aplikasi website dengan menggunakan PHP dan Javascript, dengan CodeIgniter dan NodeJs
-              </p>
+              <h3 class="h3">Certifications</h3>
+            </div>
 
-            </li>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Coursera</h4>
 
-          </ol>
+                <span>2024</span>
+                <p class="exp-text">
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/certificate/HUW7XB79RQ6J"
+                    target="_blank"
+                    class="certificate-link"
+                  >
+                    React Basics
+                    <img src="./assets/images/link-icon.svg" alt="Another Profile" width="20" />
+                  </a>
+                </p>
 
-        </section>
+                <span class="year">2022</span>
+                <p class="exp-text">
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/specialization/certificate/R75K3332TV52"
+                    target="_blank"
+                    class="certificate-link"
+                  >
+                    Google UX Design
+                    <img src="./assets/images/link-icon.svg" alt="External Link" width="20" />
+                  </a>
+                </p>
 
-      </article>
+                <span class="year">2021</span>
+                <p class="exp-text">
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/certificate/BSMU2A85X39S"
+                    target="_blank"
+                    class="certificate-link"
+                  >
+                    HTML, CSS, and Javascript for Web Developers
+                    <img src="./assets/images/link-icon.svg" alt="External Link" width="20" />
+                  </a>
+                </p>
+              </li>
 
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Dicoding</h4>
 
+                <span>2023</span>
+                <p class="exp-text">
+                  <a
+                    href="https://www.dicoding.com/certificates/6RPNV4KW4Z2M"
+                    target="_blank"
+                    class="certificate-link"
+                  >
+                    Belajar Membuat Aplikasi Web dengan React
+                    <img src="./assets/images/link-icon.svg" alt="External Link" width="20" />
+                  </a>
+                </p>
+                <p class="exp-text">
+                  <a
+                    href="https://www.dicoding.com/certificates/N9ZO9D90RXG5"
+                    target="_blank"
+                    class="certificate-link"
+                  >
+                    Belajar Membuat Front-End Web untuk Pemula
+                    <img src="./assets/images/link-icon.svg" alt="External Link" width="20" />
+                  </a>
+                </p>
+              </li>
+            </ol>
+          </section>
+        </article>
 
-
-
-      <!--
+        <!--
         - #PORTFOLIO
       -->
 
-      <article class="portfolio" data-page="portfolio">
+        <article class="portfolio" data-page="portfolio">
+          <header>
+            <h2 class="h2 article-title">Portfolio</h2>
+          </header>
 
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Mobile Development</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
+          <section class="projects" style="position: relative; z-index: 2">
+            <ul class="filter-list">
+              <li class="filter-item">
+                <button class="active" data-filter-btn>All</button>
               </li>
 
-              <li class="select-item">
-                <button data-select-item>Mobile Development</button>
+              <li class="filter-item">
+                <button data-filter-btn>Web Development</button>
               </li>
 
-              <li class="select-item">
-                <button data-select-item>Web Development</button>
+              <li class="filter-item">
+                <button data-filter-btn>Mobile development</button>
               </li>
 
+              <li class="filter-item">
+                <button data-filter-btn>UI/UX Design</button>
+              </li>
             </ul>
 
-          </div>
+            <div class="filter-select-box">
+              <button class="filter-select" data-select>
+                <div class="select-value" data-selecct-value>Select category</div>
 
-          <ul class="project-list">
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
+                </div>
+              </button>
 
-            <li class="project-item  active" data-filter-item data-category="mobile development">
-              <a href="https://github.com/abintang/TAMAGO">
+              <ul class="select-list">
+                <li class="select-item">
+                  <button data-select-item>All</button>
+                </li>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                <li class="select-item">
+                  <button data-select-item>Web Development</button>
+                </li>
 
-                  <img src="./assets/images/tamago.png" alt="finance" loading="lazy">
-                </figure>
+                <li class="select-item">
+                  <button data-select-item>Mobile Development</button>
+                </li>
 
-                <h3 class="project-title">TAMAGO - Anime Scheduler</h3>
+                <li class="select-item">
+                  <button data-select-item>UI/UX Design</button>
+                </li>
+              </ul>
+            </div>
 
-                <p class="project-category">Mobile Development (Flutter)</p>
+            <ul class="project-list">
+              <li class="project-item active" data-filter-item data-category="web development">
+                <a href="https://line.bsilhk.menlhk.go.id/" target="_blank">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
 
-              </a>
-            </li>
+                    <img src="./assets/images/line-web.png" alt="finance" loading="lazy" />
+                  </figure>
 
-            <li class="project-item  active" data-filter-item data-category="mobile development">
-              <a href="https://github.com/abintang/valo-wiki">
+                  <h3 class="project-title">
+                    LINE BSILHK - Badan Standardisasi Instrumen Lingkungan Hidup dan Kehutanan
+                  </h3>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                  <p class="project-category">Web Development (CodeIgniter & Laravel)</p>
+                </a>
+              </li>
 
-                  <img src="./assets/images/valo.png" alt="finance" loading="lazy">
-                </figure>
+              <li class="project-item active" data-filter-item data-category="web development">
+                <a href="https://hadiwanatales.org/" target="_blank">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
 
-                <h3 class="project-title">Valo Wiki</h3>
+                    <img src="./assets/images/hadiwana-web.png" alt="finance" loading="lazy" />
+                  </figure>
 
-                <p class="project-category">Mobile Development (Flutter)</p>
+                  <h3 class="project-title">Hadiwana Tirta Lestari</h3>
 
-              </a>
-            </li>
+                  <p class="project-category">Web Development (Laravel)</p>
+                </a>
+              </li>
 
-            <li class="project-item  active" data-filter-item data-category="mobile development">
-              <a href="https://www.youtube.com/watch?v=OsFoV9Y5C4s&ab_channel=BintangAditya">
+              <li class="project-item active" data-filter-item data-category="web development">
+                <a href="https://web.k3i-korlantas.id/login" target="_blank">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                    <img src="./assets/images/k3i-web.png" alt="finance" loading="lazy" />
+                  </figure>
 
-                  <img src="./assets/images/Astropedia.jpg" alt="finance" loading="lazy">
-                </figure>
+                  <h3 class="project-title">K3i Korlantas Polri</h3>
 
-                <h3 class="project-title">Astropedia</h3>
+                  <p class="project-category">Web Development (CodeIgniter)</p>
+                </a>
+              </li>
 
-                <p class="project-category">Mobile Development (Native Android dan Flutter)</p>
+              <li class="project-item active" data-filter-item data-category="web development">
+                <a href="https://voca.arculus-indonesia.com/" target="_blank">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
 
-              </a>
-            </li>
+                    <img src="./assets/images/voca-web.png" alt="finance" loading="lazy" />
+                  </figure>
 
-            <li class="project-item  active" data-filter-item data-category="mobile development">
-                <figure class="project-img">
-                  <img src="./assets/images/Eperda.jpg" alt="orizon" loading="lazy">
-                </figure>
+                  <h3 class="project-title">Voca</h3>
 
-                <h3 class="project-title">Eperda Mobile</h3>
+                  <p class="project-category">Web Development (CodeIgniter)</p>
+                </a>
+              </li>
 
-                <p class="project-category">Android Development</p>
+              <li class="project-item active" data-filter-item data-category="web development">
+                <a href="https://trident.arculus-indonesia.com/home" target="_blank">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
 
-              </a>
-            </li>
+                    <img src="./assets/images/trident-web.png" alt="finance" loading="lazy" />
+                  </figure>
 
-            <li class="project-item  active" data-filter-item data-category="mobile development">
-              <a href="https://play.google.com/store/apps/details?id=com.project.inovationmobile">
+                  <h3 class="project-title">Trident</h3>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                  <p class="project-category">Web Development (CodeIgniter)</p>
+                </a>
+              </li>
 
-                  <img src="./assets/images/IMC.jpg" alt="fundo" loading="lazy">
-                </figure>
+              <li class="project-item active" data-filter-item data-category="ui/ux design">
+                <a
+                  href="https://www.figma.com/proto/wyuIrVAzOYBNpno44w1kWg/SINADI---DKI?page-id=758%3A1&node-id=3220-8460&node-type=frame&viewport=-1300%2C-1426%2C0.35&t=yE5xG5cemOHIjqvG-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=3220%3A8460"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
 
-                <h3 class="project-title">Innovation Mobile Center</h3>
+                    <img src="./assets/images/sinadi.png" alt="fundo" loading="lazy" />
+                  </figure>
 
-                <p class="project-category">Android Development</p>
+                  <h3 class="project-title">SINADI DKI</h3>
 
-              </a>
-            </li>
+                  <p class="project-category">UI/UX Design (Figma)</p>
+                </a>
+              </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              
-                <figure class="project-img">
+              <li class="project-item active" data-filter-item data-category="ui/ux design">
+                <a
+                  href="https://www.figma.com/proto/z2cmiFBWWHhMgMLfMFSmpL/WEB-INOVATOR?page-id=1%3A18&node-id=363-1059&viewport=15975%2C-3689%2C1.31&t=Gm1RP3SeRsfQRmLa-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=363%3A1059&show-proto-sidebar=1"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
 
-                  <img src="./assets/images/dlyplants.jpg" alt="brawlhalla" loading="lazy">
-                </figure>
+                    <img src="./assets/images/inovator.png" alt="fundo" loading="lazy" />
+                  </figure>
 
-                <h3 class="project-title">Dlyplants.id</h3>
+                  <h3 class="project-title">Innovation Web Center</h3>
 
-                <p class="project-category">Web Development</p>
+                  <p class="project-category">UI/UX Design (Figma)</p>
+                </a>
+              </li>
 
-              </a>
-            </li>
+              <li class="project-item active" data-filter-item data-category="mobile development">
+                <a
+                  href="https://drive.google.com/file/d/19tSdWCcy2OgK1WnVmjOU1oFWIQfy98Ir/view?usp=sharing"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <img src="./assets/images/sijab-mobile.png" alt="orizon" loading="lazy" />
+                  </figure>
 
+                  <h3 class="project-title">SIJAB Mobile</h3>
 
-          </ul>
+                  <p class="project-category">Android Development (React Native)</p>
+                </a>
+              </li>
+            </ul>
+          </section>
+          <video class="body-overlay" style="z-index: 1" muted="" autoplay="" loop="" playsinline>
+            <source src="./assets/images/video/particle.mp4" type="video/mp4" />
+          </video>
+        </article>
 
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
+        <!--
         - #BLOG
       -->
 
-
-
-      <!--
+        <!--
         - #CONTACT
-      -->
+      --></div>
+    </main>
 
-
-    </div>
-
-  </main>
-
-
-
-
-
-
-  <!--
+    <!--
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/type-word.js"></script>
 
-  <!--
+    <!--
     - ionicon link
   -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-</body>
-
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  </body>
 </html>
