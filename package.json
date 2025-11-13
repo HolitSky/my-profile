@@ -1,0 +1,11 @@
+{
+  "name": "my-profile-optimizer",
+  "version": "1.0.0",
+  "description": "Image optimization for portfolio",
+  "scripts": {
+    "optimize": "node optimize-images.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.0"
+  }
+}
