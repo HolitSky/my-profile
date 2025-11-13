@@ -71,10 +71,13 @@
 
       <aside class="sidebar" style="position: sticky; z-index: 2" data-sidebar>
         <div class="sidebar-info">
-          <a href="./assets/images/profile-img-1.jpg" data-fancybox="gallery">
+          <a href="./assets/images/optimized/profile-img-1.webp" data-fancybox="gallery">
             <div class="user-bg"></div>
             <figure class="avatar-box">
-              <img src="./assets/images/self3.png" alt="Another Profile" width="80" />
+              <picture>
+                <source srcset="./assets/images/optimized/self3.webp" type="image/webp">
+                <img src="./assets/images/self3.png" alt="Another Profile" width="80" />
+              </picture>
             </figure>
           </a>
 
@@ -143,7 +146,7 @@
               <div class="contact-info">
                 <p class="contact-title">Location</p>
 
-                <address>Bogor, West Java, Indonesia</address>
+                <address>Tanggerang, West Java, Indonesia</address>
               </div>
             </li>
           </ul>
@@ -651,6 +654,45 @@
             </div>
 
             <ul class="project-list">
+
+              <li class="project-item active" data-filter-item data-category="web development">
+                <a href="https://radar.kemenlh.go.id/" target="_blank">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <picture>
+                      <source srcset="./assets/images/optimized/radar-web.webp" type="image/webp">
+                      <img src="./assets/images/radar-web.png" alt="Radar Website" loading="lazy" />
+                    </picture>
+                  </figure>
+
+                  <h3 class="project-title">Radar Kemenlh</h3>
+
+                  <p class="project-category">Full Stack Developer</p>
+                </a>
+              </li>
+
+               <li class="project-item active" data-filter-item data-category="web development">
+                <a href="https://sigap-award.site/" target="_blank">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <picture>
+                      <source srcset="./assets/images/optimized/sigap-award.webp" type="image/webp">
+                      <img src="./assets/images/sigap-award.png" alt="Sigap Award Website" loading="lazy" />
+                    </picture>
+                  </figure>
+
+                  <h3 class="project-title">Sigap Award</h3>
+
+                  <p class="project-category">Full Stack Developer</p>
+                </a>
+              </li>
+
               <li class="project-item active" data-filter-item data-category="web development">
                 <a href="https://ownskin.co.id/" target="_blank">
                   <figure class="project-img">
