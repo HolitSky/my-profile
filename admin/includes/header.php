@@ -20,10 +20,27 @@
         }
         .sidebar {
             min-height: 100vh;
+            max-height: 100vh;
             background: #0c0f38;
             color: white;
             position: fixed;
             width: 16.666667%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        /* Custom scrollbar for sidebar */
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .sidebar::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+        }
+        .sidebar::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 3px;
+        }
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
         }
         .sidebar-logo {
             display: flex;
@@ -85,7 +102,7 @@
                         <i class="bi bi-person"></i> About
                     </a>
                     <a class="nav-link <?= ($activePage ?? '') === 'skills' ? 'active' : '' ?>" href="skills.php">
-                        <i class="bi bi-star"></i> Skills
+                        <i class="bi bi-code-square"></i> Technologies
                     </a>
                     <a class="nav-link <?= ($activePage ?? '') === 'experience' ? 'active' : '' ?>" href="experience.php">
                         <i class="bi bi-briefcase"></i> Experience
@@ -99,8 +116,12 @@
                     <a class="nav-link <?= ($activePage ?? '') === 'services' ? 'active' : '' ?>" href="services.php">
                         <i class="bi bi-gear"></i> Services
                     </a>
-                    <a class="nav-link <?= ($activePage ?? '') === 'contact' ? 'active' : '' ?>" href="contact.php">
+                    <a class="nav-link <?= $activePage === 'contact' ? 'active' : '' ?>" href="contact.php">
                         <i class="bi bi-envelope"></i> Contact Info
+                    </a>
+                    <hr class="my-3" style="border-color: rgba(255,255,255,0.3);">
+                    <a class="nav-link <?= $activePage === 'security' ? 'active' : '' ?>" href="security.php">
+                        <i class="bi bi-shield-lock"></i> Security Settings
                     </a>
                     <hr class="my-3" style="border-color: rgba(255,255,255,0.3);">
                     <a class="nav-link" href="../index.html" target="_blank">

@@ -51,19 +51,16 @@ CREATE TABLE about (
 
 -- ============================================
 -- TABLE: skills
--- Description: Technical skills with proficiency
+-- Description: Technologies I Work With (icon + name)
 -- ============================================
 CREATE TABLE skills (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    percentage INT NOT NULL CHECK (percentage >= 0 AND percentage <= 100),
-    category VARCHAR(50) DEFAULT 'technical',
-    icon VARCHAR(100),
+    icon VARCHAR(255) NOT NULL,
     sort_order INT DEFAULT 0,
     is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    INDEX idx_category (category),
     INDEX idx_sort_order (sort_order)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

@@ -136,33 +136,34 @@ function updateContactInfo(contact) {
         const instagramLink = document.querySelector('a[href*="instagram"]');
         if (instagramLink) instagramLink.href = contact.instagram;
     }
+
+    if (contact.github) {
+        const githubLink = document.querySelector('a[href*="github"]');
+        if (githubLink) githubLink.href = contact.github;
+    }
 }
 
 /**
- * Update Skills Section
+ * Update Skills Section (Technologies I Work With)
  */
 function updateSkills(skills) {
     if (!skills || skills.length === 0) return;
 
-    const skillsList = document.querySelector('.skills-list');
-    if (!skillsList) return;
-
-    skillsList.innerHTML = '';
-
-    skills.forEach(skill => {
-        const skillItem = document.createElement('li');
-        skillItem.className = 'skills-item';
-        skillItem.innerHTML = `
-            <div class="title-wrapper">
-                <h5 class="h5">${skill.name}</h5>
-                <data value="${skill.percentage}">${skill.percentage}%</data>
-            </div>
-            <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: ${skill.percentage}%"></div>
-            </div>
-        `;
-        skillsList.appendChild(skillItem);
-    });
+    // Update Technologies section
+    const techContainer = document.querySelector('.service-skills');
+    if (techContainer) {
+        techContainer.innerHTML = '';
+        
+        skills.forEach(skill => {
+            const techItem = document.createElement('div');
+            techItem.className = 'service-skill';
+            techItem.innerHTML = `
+                <img src="${skill.icon}" alt="${skill.name} icon" width="40" />
+                <p>${skill.name}</p>
+            `;
+            techContainer.appendChild(techItem);
+        });
+    }
 }
 
 /**

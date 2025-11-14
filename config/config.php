@@ -53,9 +53,9 @@ else {
     
     // Database Configuration - HOSTINGER
     define('DB_HOST', 'localhost');
-    define('DB_NAME', 'u123456_portfolio');    // ← GANTI: Production database name
-    define('DB_USER', 'u123456_admin');        // ← GANTI: Production username
-    define('DB_PASS', 'your_secure_password'); // ← GANTI: Production password
+    define('DB_NAME', 'u734000704_khalid_profile');    // ← GANTI: Production database name
+    define('DB_USER', 'u734000704_root');        // ← GANTI: Production username
+    define('DB_PASS', 'Dbkhalidprofile321.'); // ← GANTI: Production password
     define('DB_CHARSET', 'utf8mb4');
     
     // Site Configuration
