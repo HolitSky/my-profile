@@ -393,7 +393,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </button>
         </form>
         
-        <div class="security-badge">
+        <!-- <div class="security-badge">
             <i class="bi bi-shield-lock-fill"></i>
             <strong>Security Features:</strong>
             <ul class="mb-0 mt-2" style="font-size: 12px;">
@@ -403,7 +403,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <li>Password hashing (bcrypt)</li>
                 <li>SQL injection prevention</li>
             </ul>
-        </div>
+        </div> -->
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
