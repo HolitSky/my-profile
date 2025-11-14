@@ -362,7 +362,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
             <div class="mb-3">
                 <label for="username" class="form-label">
-                    <i class="bi bi-person-fill"></i> Username
+                    <i class="bi bi-person-fill"></i> Usernames
                 </label>
                 <input type="text" class="form-control" id="username" name="username" required autofocus autocomplete="username">
             </div>
