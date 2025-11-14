@@ -2,9 +2,11 @@
 /**
  * Database Connection
  * Provides PDO database connection using config settings
+ * 
+ * NOTE: This file is loaded by config.php, so don't require config.php here!
  */
 
-require_once __DIR__ . '/../config/config.php';
+// Config constants should already be defined by config.php
 
 /**
  * Get Database Connection
@@ -25,7 +27,7 @@ function getDB() {
             $db = new PDO($dsn, DB_USER, DB_PASS, $options);
         } catch (PDOException $e) {
             // In production, log error instead of displaying
-            if (ENVIRONMENT === 'development') {
+            if (defined('ENVIRONMENT') && ENVIRONMENT === 'local') {
                 die("Database Connection Failed: " . $e->getMessage());
             } else {
                 error_log("Database Connection Failed: " . $e->getMessage());

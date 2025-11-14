@@ -164,3 +164,9 @@ if (DEBUG_MODE && php_sapi_name() !== 'cli') {
     // Uncomment to see environment info
     // echo "<!-- Environment: " . ENVIRONMENT . " | DB: " . DB_NAME . " -->";
 }
+
+// ============================================
+// LOAD DATABASE FUNCTIONS
+// ============================================
+// Load getDB() function and other database utilities
+require_once __DIR__ . '/../includes/db.php';
