@@ -147,7 +147,7 @@ function checkUtilityAccess($filename = '') {
                     <strong>Access denied for security reasons.</strong>
                 </p>
                 <p style="font-size: 12px; color: #999; margin-top: 20px;">
-                    To allow your IP, add it to ALLOWED_IPS in security-config.php
+                    Go Away!
                 </p>
             </div>
         </body>
