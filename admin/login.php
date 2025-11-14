@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../config/database.php';
-require_once __DIR__ . '/../config/auth.php';
+require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 initSession();
 
@@ -111,10 +111,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$username]);
             $user = $stmt->fetch();
             
-            if ($user && verifyPassword($password, $user['password'])) {
+            if ($user && password_verify($password, $user['password'])) {
                 // Success: Reset attempts and login
                 $_SESSION['login_attempts'] = 0;
-                loginUser($user['id'], $user['username']);
+                $_SESSION['admin_logged_in'] = true;
+                $_SESSION['admin_id'] = $user['id'];
+                $_SESSION['admin_username'] = $user['username'];
+                session_regenerate_id(true);
                 header('Location: dashboard.php');
                 exit;
             } else {

@@ -4,10 +4,15 @@
  * 
  * Use this file to test your database connection
  * DELETE THIS FILE after successful setup!
+ * Protected by IP whitelist
  */
 
+// Check access permission (IP whitelist)
+require_once __DIR__ . '/security-config.php';
+checkUtilityAccess();
+
 // Load configuration
-require_once __DIR__ . '/config/database.php';
+require_once __DIR__ . '/config/config.php';
 
 ?>
 <!DOCTYPE html>

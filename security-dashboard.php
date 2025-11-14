@@ -2,9 +2,10 @@
 /**
  * Security Dashboard
  * Simple interface untuk manage security settings
+ * Protected by IP whitelist - only accessible from allowed IPs
  */
 
-// Check access permission
+// Check access permission (IP whitelist)
 require_once __DIR__ . '/security-config.php';
 checkUtilityAccess();
 
