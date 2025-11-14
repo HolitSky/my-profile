@@ -1,2 +1,25 @@
-
+# IDE
 .codegpt
+.vscode/
+
+# Logs
+deploy.log
+*.log
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# Config (if contains sensitive data)
+# config/config.php
+
+# Cache
+opcache/
+cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
