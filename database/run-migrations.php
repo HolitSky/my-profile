@@ -8,6 +8,14 @@
  * Protected by security-config.php
  */
 
+// Prevent timeout
+set_time_limit(300); // 5 minutes
+ini_set('max_execution_time', 300);
+
+// Disable output buffering for real-time progress
+if (ob_get_level()) ob_end_clean();
+ob_implicit_flush(true);
+
 // Check access permission
 require_once __DIR__ . '/../security-config.php';
 checkUtilityAccess();
@@ -117,6 +125,39 @@ require_once __DIR__ . '/../config/config.php';
         .log-error { color: #ff5555; }
         .log-warning { color: #f1fa8c; }
         .log-info { color: #8be9fd; }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -192,8 +233,33 @@ require_once __DIR__ . '/../config/config.php';
                     
                     // Execute migrations
                     echo '<span class="log-info">🔨 Running migrations...</span><br>';
-                    $db->exec($migrationSQL);
-                    echo '<span class="log-success">✅ Migrations executed successfully!</span><br><br>';
+                    
+                    // Split SQL into individual statements
+                    $statements = array_filter(
+                        array_map('trim', explode(';', $migrationSQL)),
+                        function($stmt) { return !empty($stmt); }
+                    );
+                    
+                    $migrationCount = 0;
+                    foreach ($statements as $statement) {
+                        if (!empty($statement)) {
+                            try {
+                                $db->exec($statement);
+                                $migrationCount++;
+                                // Flush output to show progress
+                                echo '<span class="log-success">  ✓ Statement ' . $migrationCount . ' executed</span><br>';
+                                flush();
+                                ob_flush();
+                            } catch (PDOException $e) {
+                                // Skip if table doesn't exist (for DROP statements)
+                                if (strpos($e->getMessage(), "doesn't exist") === false) {
+                                    throw $e;
+                                }
+                            }
+                        }
+                    }
+                    
+                    echo '<span class="log-success">✅ Migrations executed successfully! (' . $migrationCount . ' statements)</span><br><br>';
                     
                     // Read seeder file
                     echo '<span class="log-info">📖 Reading seeder file...</span><br>';
@@ -218,8 +284,26 @@ require_once __DIR__ . '/../config/config.php';
                     
                     // Execute seeders
                     echo '<span class="log-info">🌱 Running seeders...</span><br>';
-                    $db->exec($seederSQL);
-                    echo '<span class="log-success">✅ Seeders executed successfully!</span><br><br>';
+                    
+                    // Split SQL into individual statements
+                    $seederStatements = array_filter(
+                        array_map('trim', explode(';', $seederSQL)),
+                        function($stmt) { return !empty($stmt); }
+                    );
+                    
+                    $seederCount = 0;
+                    foreach ($seederStatements as $statement) {
+                        if (!empty($statement)) {
+                            $db->exec($statement);
+                            $seederCount++;
+                            // Flush output to show progress
+                            echo '<span class="log-success">  ✓ Statement ' . $seederCount . ' executed</span><br>';
+                            flush();
+                            ob_flush();
+                        }
+                    }
+                    
+                    echo '<span class="log-success">✅ Seeders executed successfully! (' . $seederCount . ' statements)</span><br><br>';
                     
                     // Verify tables
                     echo '<span class="log-info">🔍 Verifying tables...</span><br>';
@@ -286,5 +370,34 @@ require_once __DIR__ . '/../config/config.php';
             ?>
         </div>
     </div>
+    
+    <script>
+        // Auto-scroll log to bottom
+        function scrollLogToBottom() {
+            const log = document.querySelector('.log');
+            if (log) {
+                log.scrollTop = log.scrollHeight;
+            }
+        }
+        
+        // Scroll every 100ms during migration
+        const scrollInterval = setInterval(scrollLogToBottom, 100);
+        
+        // Stop scrolling after 5 minutes
+        setTimeout(() => clearInterval(scrollInterval), 300000);
+        
+        // Disable button after click
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.href && this.href.includes('action=run')) {
+                    setTimeout(() => {
+                        this.style.opacity = '0.5';
+                        this.style.pointerEvents = 'none';
+                        this.innerHTML = '⏳ Running... Please wait';
+                    }, 100);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
