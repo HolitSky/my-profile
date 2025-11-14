@@ -307,11 +307,19 @@ require_once __DIR__ . '/../config/config.php';
                     
                     // Verify tables
                     echo '<span class="log-info">🔍 Verifying tables...</span><br>';
-                    $tables = $db->query("SHOW TABLES")->fetchAll(PDO::FETCH_COLUMN);
+                    
+                    // Fetch all tables first (close cursor)
+                    $stmt = $db->query("SHOW TABLES");
+                    $tables = $stmt->fetchAll(PDO::FETCH_COLUMN);
+                    $stmt->closeCursor(); // Close cursor to allow new queries
                     
                     foreach ($tables as $table) {
-                        $count = $db->query("SELECT COUNT(*) FROM `$table`")->fetchColumn();
+                        $stmt = $db->query("SELECT COUNT(*) FROM `$table`");
+                        $count = $stmt->fetchColumn();
+                        $stmt->closeCursor(); // Close cursor after each query
                         echo '<span class="log-success">  ✓ ' . $table . ' (' . $count . ' records)</span><br>';
+                        flush();
+                        ob_flush();
                     }
                     
                     echo '<br><span class="log-success">🎉 DATABASE SETUP COMPLETE!</span><br>';
