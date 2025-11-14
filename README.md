@@ -226,16 +226,16 @@
    APP_URL=https://www.khalidsaifullah.me
    
    DB_HOST=localhost
-   DB_NAME=u734000704_khalid_profile
-   DB_USER=u734000704_root
-   DB_PASS=YourProductionPassword
+   DB_NAME=my_db
+   DB_USER=my_user
+   DB_PASS=YourPassword
    
    YOUR_IP=YOUR_ACTUAL_IP
    ENABLE_UTILITY_FILES=false
    
    DEPLOY_ENABLED=true
    DEPLOY_SECRET=your-generated-secret
-   PROJECT_PATH=/home/u734000704/domains/khalidsaifullah.me/public_html
+   PROJECT_PATH=/home/public_html
    GIT_BRANCH=main
    ```
    
