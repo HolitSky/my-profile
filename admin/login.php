@@ -389,7 +389,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             
             <button type="submit" class="btn btn-primary btn-login w-100">
-                <i class="bi bi-box-arrow-in-right"></i> Login
+                <i class="bi bi-box-arrow-in-right"></i> Logins
             </button>
         </form>
         
