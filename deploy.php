@@ -45,6 +45,14 @@ define('DEPLOY_LOG', __DIR__ . '/deploy.log');
 // Enable/disable deploy
 define('DEPLOY_ENABLED', true);
 
+// Allow manual trigger (without signature) from your IP
+// Set to false in production for maximum security
+define('ALLOW_MANUAL_TRIGGER', true);
+
+// Your IP for manual trigger (when ALLOW_MANUAL_TRIGGER is true)
+// Change this to your current IP address
+define('MANUAL_TRIGGER_IP', '180.252.241.181');
+
 // ============================================
 // FUNCTIONS
 // ============================================
@@ -196,6 +204,22 @@ if (!empty($signature)) {
         die(json_encode(['success' => false, 'message' => 'Invalid signature']));
     }
     logMessage('Signature verified');
+} else {
+    // No signature provided
+    if (!ALLOW_MANUAL_TRIGGER) {
+        http_response_code(403);
+        logMessage('Manual trigger disabled', 'ERROR');
+        die(json_encode(['success' => false, 'message' => 'Manual trigger disabled. Use GitHub webhook.']));
+    }
+    
+    // Allow only from your IP or localhost for manual testing
+    $allowedManualIPs = [MANUAL_TRIGGER_IP, '127.0.0.1', '::1'];
+    if (!in_array($clientIP, $allowedManualIPs)) {
+        http_response_code(403);
+        logMessage('No signature provided from IP: ' . $clientIP, 'ERROR');
+        die(json_encode(['success' => false, 'message' => 'Signature required']));
+    }
+    logMessage('Manual trigger from allowed IP: ' . $clientIP, 'INFO');
 }
 
 // Parse payload

@@ -53,9 +53,32 @@ pwd
 
 ### **1.3 Set Git Branch**
 
-Line 38:
+Line 40:
 ```php
 define('GIT_BRANCH', 'main'); // or 'master'
+```
+
+---
+
+### **1.4 Set Your IP for Manual Trigger**
+
+Line 54:
+```php
+define('MANUAL_TRIGGER_IP', '180.252.241.181');
+```
+
+**To find your current IP:**
+```bash
+# Visit this URL in browser:
+https://api.ipify.org
+
+# Or use command:
+curl https://api.ipify.org
+```
+
+**Update the IP in deploy.php:**
+```php
+define('MANUAL_TRIGGER_IP', 'YOUR_CURRENT_IP_HERE');
 ```
 
 ---

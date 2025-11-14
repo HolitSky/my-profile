@@ -1,11 +1,15 @@
-# ![Logo](./assets/images/logo.svg) Khalid Saifullah - Portfolio Website
-
-A modern, dynamic portfolio website with a comprehensive Content Management System (CMS) built with PHP, MySQL, and vanilla JavaScript. Features a beautiful UI with video backgrounds, smooth animations, and full admin control over all content.
-
-[![Live Demo](https://img.shields.io/badge/demo-live-success)](http://khalidsaifullah.me/)
-[![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-blue)](https://www.php.net/)
-[![MySQL](https://img.shields.io/badge/MySQL-5.7%2B-orange)](https://www.mysql.com/)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+<div align="center">
+  <img src="./assets/images/logo.svg" alt="Logo" width="120" />
+  
+  # Khalid Saifullah - Portfolio Website
+  
+  A modern, dynamic portfolio website with a comprehensive Content Management System (CMS) built with PHP, MySQL, and vanilla JavaScript. Features a beautiful UI with video backgrounds, smooth animations, and full admin control over all content.
+  
+  [![Live Demo](https://img.shields.io/badge/demo-live-success)](http://khalidsaifullah.me/)
+  [![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-blue)](https://www.php.net/)
+  [![MySQL](https://img.shields.io/badge/MySQL-5.7%2B-orange)](https://www.mysql.com/)
+  [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+</div>
 
 ## 📸 Screenshots
 
