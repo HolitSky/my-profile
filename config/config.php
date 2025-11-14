@@ -1,14 +1,22 @@
 <?php
 /**
  * Environment Configuration
- * Auto-detect Local vs Production
+ * Uses .env file for sensitive data
  */
 
-// Detect environment based on server name
+// Load environment variables
+require_once __DIR__ . '/../includes/env.php';
+
+// Detect environment
 function getEnvironment() {
-    $host = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost';
+    // Check .env first
+    $envFromFile = env('APP_ENV');
+    if ($envFromFile) {
+        return $envFromFile;
+    }
     
-    // Local environment indicators
+    // Auto-detect based on host
+    $host = $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'localhost';
     $localHosts = ['localhost', '127.0.0.1', '::1', 'localhost:8080'];
     
     if (in_array($host, $localHosts) || strpos($host, '.local') !== false) {
@@ -25,25 +33,25 @@ $environment = getEnvironment();
 // ============================================
 if ($environment === 'local') {
     
-    // Database Configuration
-    define('DB_HOST', 'localhost');
-    define('DB_NAME', 'khalid_portfolio');        // Local database name
-    define('DB_USER', 'root');                 // Local username
-    define('DB_PASS', '');                     // Local password (empty for XAMPP/WAMP)
+    // Database Configuration (from .env or defaults)
+    define('DB_HOST', env('DB_HOST', 'localhost'));
+    define('DB_NAME', env('DB_NAME', 'khalid_portfolio'));
+    define('DB_USER', env('DB_USER', 'root'));
+    define('DB_PASS', env('DB_PASS', ''));
     define('DB_CHARSET', 'utf8mb4');
     
     // Site Configuration
-    define('SITE_URL', 'http://localhost/my-profile');  // Local URL
+    define('SITE_URL', env('APP_URL', 'http://localhost/my-profile'));
     define('UPLOAD_PATH', __DIR__ . '/../uploads/');
     define('UPLOAD_URL', SITE_URL . '/uploads/');
     
     // Debug Mode
-    define('DEBUG_MODE', true);
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
+    define('DEBUG_MODE', env_bool('APP_DEBUG', true));
+    ini_set('display_errors', DEBUG_MODE ? 1 : 0);
+    error_reporting(DEBUG_MODE ? E_ALL : 0);
     
     // Session Configuration
-    define('SESSION_LIFETIME', 7200); // 2 hours for local
+    define('SESSION_LIFETIME', env_int('SESSION_LIFETIME', 7200));
 }
 
 // ============================================
@@ -51,25 +59,25 @@ if ($environment === 'local') {
 // ============================================
 else {
     
-    // Database Configuration - HOSTINGER
-    define('DB_HOST', 'localhost');
-    define('DB_NAME', 'u734000704_khalid_profile');    // ← GANTI: Production database name
-    define('DB_USER', 'u734000704_root');        // ← GANTI: Production username
-    define('DB_PASS', 'Dbkhalidprofile321.'); // ← GANTI: Production password
+    // Database Configuration (from .env - REQUIRED in production!)
+    define('DB_HOST', env('DB_HOST', 'localhost'));
+    define('DB_NAME', env('DB_NAME'));  // Must be set in .env
+    define('DB_USER', env('DB_USER'));  // Must be set in .env
+    define('DB_PASS', env('DB_PASS'));  // Must be set in .env
     define('DB_CHARSET', 'utf8mb4');
     
-    // Site Configuration
-    define('SITE_URL', 'https://khalidsaifullah.me'); // ← GANTI: Production URL
+    // Site Configuration (from .env or default)
+    define('SITE_URL', env('APP_URL', 'https://khalidsaifullah.me'));
     define('UPLOAD_PATH', __DIR__ . '/../uploads/');
     define('UPLOAD_URL', SITE_URL . '/uploads/');
     
-    // Debug Mode - DISABLED in production
-    define('DEBUG_MODE', false);
-    ini_set('display_errors', 0);
-    error_reporting(0);
+    // Debug Mode (from .env, default false in production)
+    define('DEBUG_MODE', env_bool('APP_DEBUG', false));
+    ini_set('display_errors', DEBUG_MODE ? 1 : 0);
+    error_reporting(DEBUG_MODE ? E_ALL : 0);
     
     // Session Configuration
-    define('SESSION_LIFETIME', 3600); // 1 hour for production
+    define('SESSION_LIFETIME', env_int('SESSION_LIFETIME', 3600));
 }
 
 // ============================================

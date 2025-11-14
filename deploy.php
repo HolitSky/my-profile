@@ -1,57 +1,61 @@
 <?php
 /**
- * GitHub Webhook Auto-Deploy
- * Automatically pull latest code from GitHub when push event occurs
+ * GitHub Webhook Auto-Deploy Script
+ * Automatically pulls latest code when GitHub webhook is triggered
  * 
- * Setup:
- * 1. Set DEPLOY_SECRET in this file
- * 2. Add webhook in GitHub repo settings:
- *    - URL: https://www.khalidsaifullah.me/deploy.php
- *    - Content type: application/json
- *    - Secret: [same as DEPLOY_SECRET]
- *    - Events: Just the push event
- * 3. Make sure SSH key is set up for git pull
+ * SETUP:
+ * 1. Copy .env.example to .env
+ * 2. Set DEPLOY_SECRET in .env
+ * 3. Set YOUR_IP and MANUAL_TRIGGER_IP in .env
+ * 4. Make sure SSH key is set up for git pull
  * 
  * Protected by IP whitelist and secret token
  */
 
+// Load environment variables
+require_once __DIR__ . '/includes/env.php';
+
 // ============================================
-// CONFIGURATION
+// CONFIGURATION (from .env)
 // ============================================
 
-// Secret token for webhook verification (CHANGE THIS!)
-// NOTE: This is NOT your GitHub PAT token! This is a webhook secret.
-define('DEPLOY_SECRET', 'ed93417c86d1eee139dd20a6afce675c9a74a49737d7124e327bdf0defd9a516');
+// Secret token for webhook verification (from .env)
+define('DEPLOY_SECRET', env('DEPLOY_SECRET', 'change-this-secret'));
 
-// Allowed IPs (GitHub webhook IPs + your IP)
-define('DEPLOY_ALLOWED_IPS', [
-    '127.0.0.1',           // Localhost
-    '::1',                 // Localhost IPv6
-    '180.252.241.181',     // Your IP
-    // GitHub webhook IPs (add as needed)
-    '140.82.112.0/20',     // GitHub webhooks
-    '143.55.64.0/20',      // GitHub webhooks
-    '192.30.252.0/22',     // GitHub webhooks
-    '185.199.108.0/22',    // GitHub webhooks
+// Build allowed IPs array from .env
+$githubIPs = env_array('GITHUB_WEBHOOK_IPS', [
+    '140.82.112.0/20',
+    '143.55.64.0/20',
+    '192.30.252.0/22',
+    '185.199.108.0/22',
 ]);
 
-// Project paths
-define('PROJECT_PATH', '/home/u734000704/domains/khalidsaifullah.me/public_html');
-define('GIT_BRANCH', 'main'); // or 'master'
+$yourIP = env('YOUR_IP', '127.0.0.1');
+$manualTriggerIP = env('MANUAL_TRIGGER_IP', $yourIP);
+
+$allowedIPs = array_merge(
+    ['127.0.0.1', '::1'],  // Localhost
+    [$yourIP, $manualTriggerIP],  // Your IPs
+    $githubIPs  // GitHub webhook IPs
+);
+
+define('DEPLOY_ALLOWED_IPS', array_unique($allowedIPs));
+
+// Project paths (from .env)
+define('PROJECT_PATH', env('PROJECT_PATH', __DIR__));
+define('GIT_BRANCH', env('GIT_BRANCH', 'main'));
 
 // Log file
 define('DEPLOY_LOG', __DIR__ . '/deploy.log');
 
-// Enable/disable deploy
-define('DEPLOY_ENABLED', true);
+// Enable/disable deploy (from .env)
+define('DEPLOY_ENABLED', env_bool('DEPLOY_ENABLED', true));
 
-// Allow manual trigger (without signature) from your IP
-// Set to false in production for maximum security
-define('ALLOW_MANUAL_TRIGGER', true);
+// Allow manual trigger (from .env)
+define('ALLOW_MANUAL_TRIGGER', env_bool('ALLOW_MANUAL_TRIGGER', true));
 
-// Your IP for manual trigger (when ALLOW_MANUAL_TRIGGER is true)
-// Change this to your current IP address
-define('MANUAL_TRIGGER_IP', '180.252.241.181');
+// Your IP for manual trigger (from .env)
+define('MANUAL_TRIGGER_IP', $manualTriggerIP);
 
 // ============================================
 // FUNCTIONS

@@ -1,6 +1,12 @@
-# IDE
+# Environment variables (NEVER commit!)
+.env
+.env.local
+.env.production
+
+# IDE
 .codegpt
 .vscode/
+.idea/
 
 # Logs
 deploy.log
@@ -10,9 +16,6 @@ deploy.log
 uploads/*
 !uploads/.gitkeep
 
-# Config (if contains sensitive data)
-# config/config.php
-
 # Cache
 opcache/
 cache/
@@ -20,6 +23,15 @@ cache/
 # OS
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
+*~
 
 # Node
 node_modules/
+npm-debug.log
+yarn-error.log
+
+# Composer
+vendor/
+composer.lock

@@ -1,30 +1,26 @@
 <?php
 /**
  * Security Configuration
- * Simple true/false untuk enable/disable utility files
- * 
- * CARA PAKAI:
- * - Set ENABLE_UTILITY_FILES = true untuk development (local)
- * - Set ENABLE_UTILITY_FILES = false untuk production (Hostinger)
+ * Uses .env file for sensitive data
  */
 
+// Load environment variables
+require_once __DIR__ . '/includes/env.php';
+
 // ============================================
-// SECURITY SETTINGS
+// SECURITY SETTINGS (from .env)
 // ============================================
 
-// Enable/Disable utility files
-// true  = Files accessible (Development Mode)
-// false = Files blocked (Production Mode)
-define('ENABLE_UTILITY_FILES', true);  // ← GANTI false saat deploy!
+// Enable/Disable utility files (from .env)
+define('ENABLE_UTILITY_FILES', env_bool('ENABLE_UTILITY_FILES', true));
 
-// Allowed IPs for production access (migration/seeder only)
-// Add your IP here to run migrations on production server
-define('ALLOWED_IPS', [
-    '127.0.0.1',           // Localhost IPv4
-    '::1',                 // Localhost IPv6
-    '180.252.241.181',     // Your IP - UPDATE THIS!
-    // Add more IPs as needed
-]);
+// Allowed IPs (from .env, comma-separated)
+$allowedIPsFromEnv = env_array('ALLOWED_IPS', ['127.0.0.1', '::1']);
+$yourIP = env('YOUR_IP');
+if ($yourIP && !in_array($yourIP, $allowedIPsFromEnv)) {
+    $allowedIPsFromEnv[] = $yourIP;
+}
+define('ALLOWED_IPS', $allowedIPsFromEnv);
 
 // ============================================
 // AUTO ENVIRONMENT DETECTION

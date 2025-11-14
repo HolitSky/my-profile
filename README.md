@@ -38,12 +38,15 @@
 - **Lightbox Gallery**: Fancybox integration for portfolio images
 
 ### 🔐 Security Features
+- **Environment Variables**: Sensitive data stored in `.env` (never committed to git)
 - **Secure Authentication**: Password hashing with bcrypt
 - **Rate Limiting**: Login attempt throttling (7 attempts per 15 minutes)
 - **CSRF Protection**: Token-based form validation
 - **SQL Injection Prevention**: Prepared statements for all queries
 - **XSS Protection**: Input sanitization and output escaping
 - **Session Security**: Secure session handling with regeneration
+- **IP Whitelisting**: Restrict access to utility files by IP address
+- **Auto-Deploy Security**: GitHub webhook signature verification
 - **Environment-based Config**: Separate development and production settings
 
 ### 📊 Content Management System
@@ -139,9 +142,33 @@
    cd my-profile
    ```
 
-2. **Configure Database**
+2. **Setup Environment Variables**
    
-   Edit `config/config.php`:
+   Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Edit `.env` and fill in your values:
+   ```env
+   APP_ENV=local
+   APP_DEBUG=true
+   APP_URL=http://localhost/my-profile
+   
+   DB_HOST=localhost
+   DB_NAME=khalid_portfolio
+   DB_USER=root
+   DB_PASS=
+   
+   YOUR_IP=127.0.0.1
+   ENABLE_UTILITY_FILES=true
+   ```
+   
+   **📖 See [ENV-SETUP.md](ENV-SETUP.md) for detailed configuration guide**
+
+3. **Configure Database (Legacy - Optional)**
+   
+   Alternatively, edit `config/config.php` directly:
    ```php
    // Development Configuration
    define('DB_HOST', 'localhost');
@@ -150,12 +177,12 @@
    define('DB_PASS', '');
    ```
 
-3. **Create Database**
+4. **Create Database**
    ```sql
    CREATE DATABASE portfolio_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
    ```
 
-4. **Run Migrations**
+5. **Run Migrations**
    
    Access: `http://localhost/my-profile/admin/login.php`
    
@@ -165,13 +192,13 @@
    
    Navigate to: **Security → Run Migrations**
 
-5. **Seed Database (Optional)**
+6. **Seed Database (Optional)**
    
    Navigate to: **Security → Run Seeders**
    
    This will populate the database with sample data.
 
-6. **Access the Site**
+7. **Access the Site**
    - Frontend: `http://localhost/my-profile/`
    - Admin Panel: `http://localhost/my-profile/admin/`
 
@@ -180,8 +207,44 @@
 1. **Upload Files**
    
    Upload all files to `public_html` directory via FTP/File Manager
+   
+   **⚠️ Important:** Do NOT upload `.env` file! Create it on server.
 
-2. **Configure Production Database**
+2. **Create .env on Server**
+   
+   SSH to server and create `.env`:
+   ```bash
+   ssh user@server
+   cd public_html
+   nano .env
+   ```
+   
+   Fill in production values:
+   ```env
+   APP_ENV=production
+   APP_DEBUG=false
+   APP_URL=https://www.khalidsaifullah.me
+   
+   DB_HOST=localhost
+   DB_NAME=u734000704_khalid_profile
+   DB_USER=u734000704_root
+   DB_PASS=YourProductionPassword
+   
+   YOUR_IP=YOUR_ACTUAL_IP
+   ENABLE_UTILITY_FILES=false
+   
+   DEPLOY_ENABLED=true
+   DEPLOY_SECRET=your-generated-secret
+   PROJECT_PATH=/home/u734000704/domains/khalidsaifullah.me/public_html
+   GIT_BRANCH=main
+   ```
+   
+   Set permissions:
+   ```bash
+   chmod 600 .env
+   ```
+
+3. **Configure Production Database (Legacy)**
    
    Edit `config/config.php`:
    ```php
