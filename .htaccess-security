@@ -1,0 +1,104 @@
+# ============================================
+# SECURITY PROTECTION FOR SENSITIVE FILES
+# ============================================
+# Add this to your main .htaccess file
+
+# ============================================
+# 1. PROTECT UTILITY FILES (Local Only)
+# ============================================
+
+# test-db.php - Only accessible from localhost
+<Files "test-db.php">
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+    Allow from ::1
+    Allow from localhost
+</Files>
+
+# generate-password.php - Only accessible from localhost
+<Files "generate-password.php">
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+    Allow from ::1
+    Allow from localhost
+</Files>
+
+# ============================================
+# 2. PROTECT CONFIG FILES
+# ============================================
+
+# Deny access to config directory
+<DirectoryMatch "^.*/config">
+    Order Deny,Allow
+    Deny from all
+</DirectoryMatch>
+
+# Deny access to specific config files
+<FilesMatch "^(config|database|auth)\.php$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# ============================================
+# 3. PROTECT DATABASE FOLDER
+# ============================================
+
+# Deny access to database directory
+<DirectoryMatch "^.*/database">
+    Order Deny,Allow
+    Deny from all
+</DirectoryMatch>
+
+# Allow run-migrations.php only from localhost
+<Files "run-migrations.php">
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+    Allow from ::1
+    Allow from localhost
+</Files>
+
+# ============================================
+# 4. ENVIRONMENT-BASED PROTECTION
+# ============================================
+
+# Disable in production (uncomment when deploying)
+# <Files "test-db.php">
+#     Order Deny,Allow
+#     Deny from all
+# </Files>
+
+# <Files "generate-password.php">
+#     Order Deny,Allow
+#     Deny from all
+# </Files>
+
+# <Files "run-migrations.php">
+#     Order Deny,Allow
+#     Deny from all
+# </Files>
+
+# ============================================
+# 5. PREVENT ACCESS TO SENSITIVE FILES
+# ============================================
+
+# Block access to .env, .git, etc
+<FilesMatch "^\.">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Block access to backup files
+<FilesMatch "\.(bak|backup|old|tmp|temp)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# ============================================
+# 6. CUSTOM ERROR PAGES
+# ============================================
+
+ErrorDocument 403 "Access Forbidden"
+ErrorDocument 404 "File Not Found"

@@ -1,0 +1,14 @@
+/**
+ * CMS Integration CSS Fixes
+ * Match original styling exactly
+ */
+
+/* Match original .exp-text styling */
+.timeline-item .exp-text {
+    color: hsl(0, 0%, 84%) !important;  /* Force light gray color */
+    font-weight: 300;
+    line-height: 1.6;
+    display: list-item;
+    margin-left: 1em;
+    list-style-type: circle;
+}

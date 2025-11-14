@@ -1,0 +1,14 @@
+# Database Folder Protection
+# Simple configuration
+
+# Prevent directory listing
+Options -Indexes
+
+# Block access to SQL files
+<FilesMatch "\.(sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Note: run-migrations.php is protected by security-config.php
+# PHP-based protection is more reliable than .htaccess

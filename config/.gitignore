@@ -1,0 +1,5 @@
+# Ignore database config with credentials
+database.php
+
+# Keep the example file
+!database.example.php
