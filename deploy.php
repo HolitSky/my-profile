@@ -20,7 +20,8 @@
 // ============================================
 
 // Secret token for webhook verification (CHANGE THIS!)
-define('DEPLOY_SECRET', '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');
+// NOTE: This is NOT your GitHub PAT token! This is a webhook secret.
+define('DEPLOY_SECRET', 'ed93417c86d1eee139dd20a6afce675c9a74a49737d7124e327bdf0defd9a516');
 
 // Allowed IPs (GitHub webhook IPs + your IP)
 define('DEPLOY_ALLOWED_IPS', [
