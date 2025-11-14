@@ -22,7 +22,7 @@ define('ENABLE_UTILITY_FILES', true);  // ← GANTI false saat deploy!
 define('ALLOWED_IPS', [
     '127.0.0.1',           // Localhost IPv4
     '::1',                 // Localhost IPv6
-    '180.252.241.181',     // Your IP - UPDATE THIS!
+         // Your IP - UPDATE THIS!
     // Add more IPs as needed
 ]);
 
