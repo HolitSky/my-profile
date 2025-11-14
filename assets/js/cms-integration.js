@@ -6,7 +6,8 @@
 // Configuration
 const API_URL = './api/index.php'; // Relative path
 const CACHE_KEY = 'portfolio_data';
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+const CACHE_DURATION = 0; // Disable cache (set to 0 for always fresh data)
+// const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes (uncomment for caching)
 
 // Check if we should use API or static content
 const USE_CMS = true; // Set to false to use static HTML content
